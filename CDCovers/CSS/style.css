@@ -1,0 +1,91 @@
+/* grid-template-columns: repeat(autofill, minmax(px, fr))
+justify-items: center;
+grid-gap: em;*/
+
+html{
+  font-family: sans-serif;
+  display: grid;
+}
+
+/* Reset */
+html, body, div, article, p, ul, h3, h4{
+  margin: 0;
+  padding: 0;
+}
+
+h3{
+  font-size: 2em;
+}
+
+h4{
+  font-size: 1.5em;
+}
+
+ul{
+  break-before: column;
+}
+/* Hoofd Div */
+.container{
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-items: center;
+  grid-gap: 1em;
+}
+/* Album Covers */
+.album{
+  float: left;
+  margin: 1em;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.album article{
+  position: relative;
+  background-color: rgba(192,192,192,0.5);
+  height: 350px;
+  font-size: .7em;
+  padding: 1.5em;
+  margin-top: 0;
+  animation: naar-beneden 1.5s forwards;
+  column-count: 2;
+}
+.album:hover article{
+  margin-top: -355px;
+  cursor: pointer;
+  animation: naar-boven 1.2s forwards;
+}
+
+.album article h3, .album article h4, .album article p {
+  padding: .3em;
+}
+/* In en uit stuiter animatie */
+@-webkit-keyframes naar-beneden{
+  10% {margin-top: -358px}
+  30% {margin-top: -202px}
+  50% {margin-top: -126px}
+  70% {margin-top: -88px}
+  90% {margin-top: -69px}
+  95% {margin-top: -59px}
+  20%, 40%, 60%, 80%, 100% {margin-top: 0px}
+}
+
+@-webkit-keyframes naar-boven{
+  10% {margin-top: 0}
+  30% {margin-top: -200px}
+  50% {margin-top: -250px}
+  70% {margin-top: -270px}
+  90% {margin-top: -290px}
+  20%, 40%, 60%, 80%, 100%{margin-top: -355px}
+}
+
+/* Validatie knoppen */
+#validatie img {
+          height: 1em;
+          width: auto;
+          border: 0;
+          margin: 1em 2em;
+      }
